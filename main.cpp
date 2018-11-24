@@ -7,7 +7,7 @@
 using namespace std;
 
 void cargar_arbol(Arbol_binario* arbol);
-void pasar_datos(string linea_leida/*,Arbol_binario* arbol*/);
+void pasar_datos(string linea_leida,Arbol_binario* arbol);
 double obtener_dato (string linea_leida, int *posicion_inicio, char final_lectura);
 string obtener_palabra (string linea_leida, int *posicion_inicio, char final_lectura);
 
@@ -47,7 +47,7 @@ double obtener_dato (string linea_leida, int &posicion_inicio, char final_lectur
 		medida_leida = atof(dato_leido.c_str());
 	  return medida_leida;
 }
-void pasar_datos(string linea_leida /*,Arbol_binario* arbol*/){
+void pasar_datos(string linea_leida ,Arbol_binario* arbol){
 
       int posicion_inicio = 0;
       Aeropuerto datos_aeropuerto;
@@ -67,18 +67,22 @@ void pasar_datos(string linea_leida /*,Arbol_binario* arbol*/){
       datos_aeropuerto.asignar_terminales(cantidad_terminales);
       datos_aeropuerto.asignar_destinos(destinos_nacionales, destinos_internacionales);
 
-    //  arbol->agregar(codigo, &datos_aeropuerto);
+      arbol->agregar(codigo, &datos_aeropuerto);
 
 }
 void cargar_arbol(Arbol_binario* arbol){
-
+      int contador = 0;
   		ifstream archivo;
   		string linea_leida;
   		archivo.open ("aeropuerto.txt");
 
-  		while(!archivo.eof ()){
+  		while(!(archivo.eof())){
+
   				getline (archivo, linea_leida);
-          pasar_datos (linea_leida /*,arbol*/);
+          contador++;
+          if(contador <3) // me lee  una linea extra por algun motivo
+          pasar_datos (linea_leida,arbol);
+
   		}
   		archivo.close ();
 }
