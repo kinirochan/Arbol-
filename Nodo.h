@@ -8,6 +8,11 @@ using namespace std;
 
 typedef Aeropuerto Tipo;
 
+const char HIJO_IZQUIERDO = 'I';
+const char HIJO_DERECHO = 'D';
+
+const int ERROR = -1;
+
 class Nodo {
 
 		private:
@@ -24,8 +29,8 @@ class Nodo {
 				Nodo (string codigo_IAT, Tipo* datos_aeropuerto);
 
 				//pre: debe haber un nodo creado
-				//pos: devuelve el dato que contenga el nodo
-				Tipo* obtener_dato ();
+				//pos: devuelve un puntero a los datos del aeropuerto
+				Tipo* obtener_datos_aeropuerto ();
 
 				//pre: recive un char I(hijo_izquierdo) o D(hijo_derecho) segun que nodo hijo se quiera buscar
 				//pos: devuelve el puntero al nodo hijo pedido;
@@ -33,9 +38,7 @@ class Nodo {
 
 				//pre: tiene que haber un nodo creado
 				//pos: hace que el puntero al siguente nodo apuente a siguente
-				void asignar_hijo (Nodo* hijo, char pocicion);
-
-		    ~Nodo ();
+				int asignar_hijo (Nodo* hijo, char pocicion);
 };
 
 #endif
