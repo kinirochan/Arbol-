@@ -1,7 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include "Aeropuerto.h"
-#include "Nodo.h"
+#include "Arbol_binario.h"
 
 using namespace std;
 
@@ -9,10 +9,12 @@ void cargar_arbol();
 void pasar_datos(string linea_leida);
 double obtener_dato (string linea_leida, int *posicion_inicio, char final_lectura);
 string obtener_palabra (string linea_leida, int *posicion_inicio, char final_lectura);
+
 int main(){
 
     cargar_arbol();
-    return 0;
+
+    return EXIT_SUCCESS;
 }
 
 string obtener_palabra (string linea_leida, int *posicion_inicio, char final_lectura){

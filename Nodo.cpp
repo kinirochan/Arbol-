@@ -11,6 +11,10 @@ Tipo* Nodo::obtener_datos_aeropuerto (){
   return this -> datos_aeropuerto;
 }
 
+string Nodo::obtener_codigo_IAT (){
+  return this -> codigo_IAT;
+}
+
 Nodo* Nodo::obtener_hijo (char hijo){
 
   if (hijo == HIJO_IZQUIERDO)

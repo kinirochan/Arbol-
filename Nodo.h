@@ -32,6 +32,8 @@ class Nodo {
 				//pos: devuelve un puntero a los datos del aeropuerto
 				Tipo* obtener_datos_aeropuerto ();
 
+				string obtener_codigo_IAT ();
+
 				//pre: recive un char I(hijo_izquierdo) o D(hijo_derecho) segun que nodo hijo se quiera buscar
 				//pos: devuelve el puntero al nodo hijo pedido;
 				Nodo* obtener_hijo (char hijo);
