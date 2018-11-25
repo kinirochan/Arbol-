@@ -5,6 +5,8 @@
 #include<string>
 
 using namespace std;
+const char ESPACIO_EN_BLANCO = ' ';
+const char FIN_STRING = '\0';
 
 void cargar_arbol(Arbol_binario* arbol);
 void pasar_datos(string linea_leida,Arbol_binario* arbol);
@@ -51,14 +53,14 @@ void pasar_datos(string linea_leida ,Arbol_binario* arbol){
 
       int posicion_inicio = 0;
       Aeropuerto datos_aeropuerto;
-      string codigo = obtener_palabra(linea_leida, posicion_inicio, ' ');
-      string nombre_aeropuerto = obtener_palabra(linea_leida, posicion_inicio, ' ');
-      string nombre_ciudad = obtener_palabra(linea_leida, posicion_inicio, ' ');
-      string pais = obtener_palabra(linea_leida, posicion_inicio, ' ');
-      double superficie = obtener_dato(linea_leida, posicion_inicio, ' ');
-      int cantidad_terminales = obtener_dato(linea_leida, posicion_inicio, ' ');
-      int destinos_nacionales = obtener_dato(linea_leida, posicion_inicio, ' ');
-      int destinos_internacionales = obtener_dato(linea_leida, posicion_inicio, '\0');
+      string codigo = obtener_palabra(linea_leida, posicion_inicio,ESPACIO_EN_BLANCO);
+      string nombre_aeropuerto = obtener_palabra(linea_leida, posicion_inicio, ESPACIO_EN_BLANCO);
+      string nombre_ciudad = obtener_palabra(linea_leida, posicion_inicio, ESPACIO_EN_BLANCO);
+      string pais = obtener_palabra(linea_leida, posicion_inicio,ESPACIO_EN_BLANCO);
+      double superficie = obtener_dato(linea_leida, posicion_inicio,ESPACIO_EN_BLANCO);
+      int cantidad_terminales = obtener_dato(linea_leida, posicion_inicio,ESPACIO_EN_BLANCO );
+      int destinos_nacionales = obtener_dato(linea_leida, posicion_inicio,ESPACIO_EN_BLANCO);
+      int destinos_internacionales = obtener_dato(linea_leida, posicion_inicio, FIN_STRING);
       
       datos_aeropuerto.asignar_nombre_aeropuerto(nombre_aeropuerto);
       datos_aeropuerto.asignar_nombre_ciudad(nombre_ciudad);
