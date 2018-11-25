@@ -59,7 +59,7 @@ void pasar_datos(string linea_leida ,Arbol_binario* arbol){
       int cantidad_terminales = obtener_dato(linea_leida, posicion_inicio, ' ');
       int destinos_nacionales = obtener_dato(linea_leida, posicion_inicio, ' ');
       int destinos_internacionales = obtener_dato(linea_leida, posicion_inicio, '\0');
-
+      
       datos_aeropuerto.asignar_nombre_aeropuerto(nombre_aeropuerto);
       datos_aeropuerto.asignar_nombre_ciudad(nombre_ciudad);
       datos_aeropuerto.asignar_pais(pais);
@@ -71,17 +71,14 @@ void pasar_datos(string linea_leida ,Arbol_binario* arbol){
 
 }
 void cargar_arbol(Arbol_binario* arbol){
-      int contador = 0;
   		ifstream archivo;
   		string linea_leida;
   		archivo.open ("aeropuerto.txt");
 
+      getline (archivo, linea_leida);
   		while(!(archivo.eof())){
-
-  				getline (archivo, linea_leida);
-          contador++;
-          if(contador <3) // me lee  una linea extra por algun motivo
           pasar_datos (linea_leida,arbol);
+  				getline (archivo, linea_leida);
 
   		}
   		archivo.close ();
