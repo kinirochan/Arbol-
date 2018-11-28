@@ -5,6 +5,8 @@
 #include <string>
 #include "aeropuerto.h"
 
+/*La clase Arbol es una implementacion arbol binario tomada de */
+
 using namespace std;
 
 struct Node {
