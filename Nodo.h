@@ -15,32 +15,30 @@ const int ERROR = -1;
 
 class Nodo {
 
-		private:
+	private:
+		string codigo_IAT;
+		Nodo* hijo_izquierdo;
+		Nodo* hijo_derecho;
+		Tipo* datos_aeropuerto;
 
-				string codigo_IAT;
-				Nodo* hijo_izquierdo;
-        Nodo* hijo_derecho;
-        Tipo* datos_aeropuerto;
+	public:
+		//pre: recibe un string codigo_IAT y un puntero a los datos del aeropuerto
+		//pos: crea un nodo con los datos
+		Nodo(string codigo_IAT, Tipo* datos_aeropuerto);
 
-		public:
+		//pre: debe haber un nodo creado
+		//pos: devuelve un puntero a los datos del aeropuerto
+		Tipo* obtener_datos_aeropuerto();
 
-				//pre: recibe un string codigo_IAT y un puntero a los datos del aeropuerto
-				//pos: crea un nodo con los datos
-				Nodo (string codigo_IAT, Tipo* datos_aeropuerto);
+		string obtener_codigo_IAT();
 
-				//pre: debe haber un nodo creado
-				//pos: devuelve un puntero a los datos del aeropuerto
-				Tipo* obtener_datos_aeropuerto ();
+		//pre: recive un char I(hijo_izquierdo) o D(hijo_derecho) segun que nodo hijo se quiera buscar
+		//pos: devuelve el puntero al nodo hijo pedido;
+		Nodo* obtener_hijo(char hijo);
 
-				string obtener_codigo_IAT ();
-
-				//pre: recive un char I(hijo_izquierdo) o D(hijo_derecho) segun que nodo hijo se quiera buscar
-				//pos: devuelve el puntero al nodo hijo pedido;
-				Nodo* obtener_hijo (char hijo);
-
-				//pre: tiene que haber un nodo creado
-				//pos: hace que el puntero al siguente nodo apuente a siguente
-				int asignar_hijo (Nodo* hijo, char pocicion);
+		//pre: tiene que haber un nodo creado
+		//pos: hace que el puntero al siguente nodo apuente a siguente
+		int asignar_hijo(Nodo* hijo, char pocicion);
 };
 
 #endif

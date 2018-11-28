@@ -9,8 +9,8 @@ using namespace std;
 
 struct Node {
 	string value;
-	Node *left;
-	Node *right;
+	Node* left;
+	Node* right;
 	Aeropuerto* datos_aeropuerto;
 
 	Node(string val, Aeropuerto* aeropuerto) {
@@ -18,7 +18,7 @@ struct Node {
 		this->datos_aeropuerto = aeropuerto;
 	}
 
-	Node(string val, Aeropuerto* aeropuerto, Node *left, Node *right) {
+	Node(string val, Aeropuerto* aeropuerto, Node* left, Node* right) {
 		this->value = val;
 		this->datos_aeropuerto = aeropuerto;
 		this->left = left;
@@ -28,13 +28,14 @@ struct Node {
 
 class BST {
 	private:
-		Node *root;
-		void addHelper(Node *root, string val, Aeropuerto* aeropuerto);
-		void printHelper(Node *root);
-		int nodesCountHelper(Node *root);
-		int heightHelper(Node *root);
-		void printMaxPathHelper(Node *root);
-		bool deleteValueHelper(Node *parent, Node *current, string value);
+		Node* root;
+		void addHelper(Node* root, string val, Aeropuerto* aeropuerto);
+		void printHelper(Node* root);
+		int nodesCountHelper(Node* root);
+		int heightHelper(Node* root);
+		void printMaxPathHelper(Node* root);
+		bool deleteValueHelper(Node* parent, Node* current, string value);
+		Node* searchHelper(Node* root, string key);
 
 	public:
 		BST();
@@ -44,6 +45,7 @@ class BST {
 		int height();
 		void printMaxPath();
 		bool deleteValue(string value);
+		Node* search(string key);
 		~BST();
 };
 

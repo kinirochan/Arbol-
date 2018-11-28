@@ -38,7 +38,7 @@ int main() {
 				eliminar_aeropuerto(&arbol);
 				break;
 			case 4:
-				listar_aeropuertos();
+				listar_aeropuertos(&arbol);
 				break;
 			default:
 				sigue_programa = false;
@@ -115,7 +115,7 @@ void cargar_arbol(BST* arbol) {
 }
 
 void mostrar_menu() {
-	system("clear");
+	// system("clear");
 	cout << "           Menu de aeropuertos 🛫       "<< endl << endl;
 	cout << "  ①  Consultar aeropuerto con codigo IATA" << endl;
 	cout << "  ②  Agregar un aeropuerto" << endl;

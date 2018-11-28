@@ -9,7 +9,7 @@ void agregar_aeropuerto(BST* arbol);
 
 void eliminar_aeropuerto(BST* arbol);
 
-void listar_aeropuertos();
+void listar_aeropuertos(BST* arbol);
 
 
 #endif

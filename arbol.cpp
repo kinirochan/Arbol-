@@ -1,4 +1,7 @@
 #include "arbol.h"
+#include <iostream>
+
+using namespace std;
 
 BST::BST() {
 	root = 0;
@@ -23,7 +26,7 @@ void BST::addHelper(Node *root, string val, Aeropuerto* aeropuerto) {
 void BST::printHelper(Node *root) {
 	if (!root) return;
 	printHelper(root->left);
-	// cout<<root->value<<' ';
+	cout << " - " << root->value << endl;
 	printHelper(root->right);
 }
 
@@ -72,6 +75,7 @@ bool BST::deleteValueHelper(Node *parent, Node *current, string value) {
 			validSubs->value = temp;
 			return deleteValueHelper(current, current->right, temp);
 		}
+		delete current->datos_aeropuerto;
 		delete current;
 		return true;
 	}
@@ -107,6 +111,25 @@ bool BST::deleteValue(string value) {
 	return this->deleteValueHelper(NULL, this->root, value);
 }
 
+Node* BST::searchHelper(Node* root, string key) { 
+	// Base Cases: root is null or key is present at root
+	if (root == NULL || root->value == key) 
+		return root; 
+
+	// Key is greater than root's key 
+	if (root->value.compare(key) < 0) 
+		return searchHelper(root->right, key); 
+
+	// Key is smaller than root's key 
+	return searchHelper(root->left, key); 
+}
+
+Node* BST::search(string key) {
+	return searchHelper(this->root, key);
+}
+
 BST::~BST() {
-	// deleteValue(root->value);
+	while (nodesCount() > 0) {
+		deleteValue(root->value);
+	}
 }
