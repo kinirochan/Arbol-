@@ -93,7 +93,7 @@ double obtener_dato(string linea_leida, int &posicion_inicio, char final_lectura
 
 	int contador = 0;
 	string dato_leido;
-	float medida_leida;
+	double medida_leida;
 
 	while(linea_leida[posicion_inicio] != final_lectura){
 
@@ -119,9 +119,9 @@ void pasar_datos(string linea_leida, BST* arbol) {
 	string nombre_ciudad = obtener_palabra(linea_leida, posicion_inicio, ' ');
 	string pais = obtener_palabra(linea_leida, posicion_inicio, ' ');
 	double superficie = obtener_dato(linea_leida, posicion_inicio, ' ');
-	int cantidad_terminales = obtener_dato(linea_leida, posicion_inicio, ' ');
-	int destinos_nacionales = obtener_dato(linea_leida, posicion_inicio, ' ');
-	int destinos_internacionales = obtener_dato(linea_leida, posicion_inicio, '\0');
+	int cantidad_terminales = (int)obtener_dato(linea_leida, posicion_inicio, ' ');
+	int destinos_nacionales = (int)obtener_dato(linea_leida, posicion_inicio, ' ');
+	int destinos_internacionales = (int)obtener_dato(linea_leida, posicion_inicio, '\0');
 
 	datos_aeropuerto->asignar_nombre_aeropuerto(nombre_aeropuerto);
 	datos_aeropuerto->asignar_nombre_ciudad(nombre_ciudad);

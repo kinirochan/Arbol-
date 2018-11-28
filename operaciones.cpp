@@ -1,5 +1,6 @@
 #include "operaciones.h"
 #include <iostream>
+#include <string>
 #include <cstdlib>
 
 using namespace std;
@@ -22,13 +23,13 @@ void consultar_aeropuerto(BST* arbol) {
 
 	}
 
-	cout << buscado->datos_aeropuerto->obtener_nombre_aeropuerto() << endl;
-	cout << buscado->datos_aeropuerto->obtener_nombre_ciudad() << endl;
-	cout << buscado->datos_aeropuerto->obtener_pais() << endl;
-	cout << buscado->datos_aeropuerto->obtener_superficie() << endl;
-	cout << buscado->datos_aeropuerto->obtener_cantidad_terminales() << endl;
-	cout << buscado->datos_aeropuerto->obtener_destinos_nacionales() << endl;
-	cout << buscado->datos_aeropuerto->obtener_destinos_internacionales() << endl;
+	cout << "Nombre: " << buscado->datos_aeropuerto->obtener_nombre_aeropuerto() << endl;
+	cout << "Ciudad: " << buscado->datos_aeropuerto->obtener_nombre_ciudad() << endl;
+	cout << "Pais: " << buscado->datos_aeropuerto->obtener_pais() << endl;
+	cout << "Superficie: " << buscado->datos_aeropuerto->obtener_superficie() << endl;
+	cout << "Terminales: " << buscado->datos_aeropuerto->obtener_cantidad_terminales() << endl;
+	cout << "Destinos nacionales: " << buscado->datos_aeropuerto->obtener_destinos_nacionales() << endl;
+	cout << "Destinos internacionales: " << buscado->datos_aeropuerto->obtener_destinos_internacionales() << endl;
 
 }
 
@@ -43,8 +44,8 @@ void agregar_aeropuerto(BST* arbol) {
 	aeropuerto->asignar_nombre_ciudad(pedir_palabra("Nombre ciudad"));
 	aeropuerto->asignar_pais(pedir_palabra("Pais"));
 	aeropuerto->asignar_superficie(pedir_numero("Superficie"));
-	aeropuerto->asignar_terminales(pedir_numero("Terminales"));
-	aeropuerto->asignar_destinos(pedir_numero("Destinos nacionales"), pedir_numero("Destinos internacionales"));
+	aeropuerto->asignar_terminales((int)pedir_numero("Terminales"));
+	aeropuerto->asignar_destinos((int)pedir_numero("Destinos nacionales"), (int)pedir_numero("Destinos internacionales"));
 
 	arbol->add(codigo, aeropuerto);
 
@@ -68,7 +69,7 @@ void listar_aeropuertos(BST* arbol) {
 
 	system("clear");
 
-	cout << "Listado de aeropuestos en orden alfabetico:" << endl;
+	cout << "Listado de aeropuertos:" << endl;
 	arbol->print();
 
 }
@@ -77,11 +78,11 @@ string pedir_palabra(string campo) {
 
 	string palabra;
 	cout << campo << ": ";
+
 	cin.clear(); // Borro el buffer
-	cin.ignore();
-	std::getline(cin, palabra);
-	cout << palabra<< endl<< endl;
-	return palabra;
+	getline(cin, palabra);
+
+	return (string)palabra;
 
 }
 
@@ -107,7 +108,8 @@ string pedir_codigo() {
 
 	string codigo;
 	cout << "Codigo IATA: ";
-	cin >> codigo;
+	cin.ignore();
+	getline(cin, codigo);
 
 	if (codigo.length() != 3) {
 
