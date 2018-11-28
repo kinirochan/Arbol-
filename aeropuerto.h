@@ -33,21 +33,47 @@ class Aeropuerto {
 		//pos:	Le asigna el pais al aeropuerto
 		void asignar_pais(string pais);
 
-		//pre: Resibe un double con el valor de la superficie
+		//pre: Recibe un double con el valor de la superficie
 		//pos: Le asigna el valor al aeropuerto
 		void asignar_superficie(double superficie);
 		
-		//pre:	Resibe un int con la cantidad de terminales
-		//pos:	Le asigna el numero de terminales al aeropuerto
+		//pre: Recibe un int con la cantidad de terminales
+		//pos: Le asigna el numero de terminales al aeropuerto
 		void asignar_terminales(int cantidad_terminales);
+
+		//pre: Recibe los destinos nacionales e internacionales a asignar 
+		//pos: Asigna los destinos internacionales y nacionales
 		void asignar_destinos(int destinos_nacionales,int destinos_internacionales);
+
+		//pre: -
+		//pos: obtiene el nombre del aeropuerto 
 		string obtener_nombre_aeropuerto();
+
+		//pre: -
+		//pos: obtiene el nombre de la ciudad 
 		string obtener_nombre_ciudad();
+
+		//pre: -
+		//pos: obtener el nombre del pais 
 		string obtener_pais();
+
+		//pre: -
+		//pos: obtener la superficie 
 		double obtener_superficie();
+
+		//pre: -
+		//pos: obtener la cantidad de terminales 
 		int obtener_cantidad_terminales();
+
+		//pre: -
+		//pos: obtener destinos nacionales
 		int obtener_destinos_nacionales();
+
+		//pre: -
+		//pos:obtener los destinos internacionales
 		int obtener_destinos_internacionales();
+
+
 		// ~Aeropuerto();
 
 };
