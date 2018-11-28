@@ -5,7 +5,7 @@
 #include <string>
 #include "aeropuerto.h"
 
-/*La clase Arbol es una implementacion arbol binario tomada de */
+/*La clase Arbol es una implementacion arbol binario tomada de https://gist.github.com/mgechev/5911348*/
 
 using namespace std;
 
