@@ -2,7 +2,7 @@
 #define NODO_H
 
 #include <iostream>
-#include "Aeropuerto.h"
+#include "aeropuerto.h"
 
 using namespace std;
 

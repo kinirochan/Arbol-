@@ -1,9 +1,11 @@
 #include "operaciones.h"
 
-void consultar_aeropuerto(Arbol_binario * arbol){}
+void consultar_aeropuerto(BST* arbol){}
 
-void agregar_aeropuerto(Arbol_binario * arbol){}
+void agregar_aeropuerto(BST* arbol){}
 
-void eliminar_aeropuerto(Arbol_binario * arbol){}
+void eliminar_aeropuerto(BST* arbol){}
 
-void listar_aeropuertos(){}
+void listar_aeropuertos() {
+	
+}

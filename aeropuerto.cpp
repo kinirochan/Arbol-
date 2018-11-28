@@ -1,4 +1,4 @@
-#include "Aeropuerto.h"
+#include "aeropuerto.h"
 
 Aeropuerto::Aeropuerto(){
   this->nombre_aeropuerto='\0';
