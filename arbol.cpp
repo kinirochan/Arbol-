@@ -42,7 +42,6 @@ int BST::heightHelper(Node *root) {
 
 void BST::printMaxPathHelper(Node *root) {
 	if (!root) return;
-	// cout<<root->value<<' ';
 	if (heightHelper(root->left) > heightHelper(root->right)) {
 		printMaxPathHelper(root->left);
 	} else {
